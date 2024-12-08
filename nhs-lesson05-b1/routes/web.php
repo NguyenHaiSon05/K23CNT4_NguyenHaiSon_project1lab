@@ -16,8 +16,3 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::redirect('/here','/three');
-Route::get('/three', function () {
-    return '<h1>Redirect: here to there</h1';
-});
