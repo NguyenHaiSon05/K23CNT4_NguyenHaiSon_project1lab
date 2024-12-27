@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\nhsMonHocController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+#MonHoc
+Route::get('/monhocs',
+        [nhsMonHocController::class,'nhsList'])->name('nhsmonhoc.nhsList');

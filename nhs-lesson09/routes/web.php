@@ -21,4 +21,5 @@ Route::get('/', function () {
 
 #SinhVien-Model
 Route::get('/nhs-sinhviens',[nhsSinhVienController::class,'nhsList'])->name('nhsSinhVien.nhsList');
-Route::get('/nhs-sinhviens',[nhsSinhVienController::class,'nhsList'])->name('nhsSinhVien.nhsList');
+Route::get('/nhs-sinhviens/create',[nhsSinhVienController::class,'nhsCreate'])->name('nhsSinhVien.nhsCreate');
+Route::post('/nhs-sinhviens/create',[nhsSinhVienController::class,'nhsCreateSubmit'])->name('nhsSinhVien.nhsCreateSubmit');

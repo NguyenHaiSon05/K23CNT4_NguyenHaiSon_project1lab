@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('nhspxuat', function (Blueprint $table) {
+        Schema::create('nhspnhap', function (Blueprint $table) {
             //$table->id();
             //$table->timestamps();
-            $table->string('nhsSoPX')->priamry();
-            $table->date('nhsNgayXuat');
-            $table->string('nhsTenKH',100);
+            $table->string('nhsSoPN')->primary();
+            $table->date('nhsNgayNhap');
+            $table->string('nhsSoDH',100);
+            //foreign
+            $table->foreign('nhsSoDH')->references('nhsSoDH')->on('nhsdondh');
         });
     }
 
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('nhspxuat');
+        Schema::dropIfExists('nhsctpnhap');
     }
 };

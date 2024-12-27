@@ -10,4 +10,6 @@ class nhsSinhVien extends Model
     use HasFactory;
 
     protected $table = 'nhssinhvien';
+
+    public $timestamps = false;
 }

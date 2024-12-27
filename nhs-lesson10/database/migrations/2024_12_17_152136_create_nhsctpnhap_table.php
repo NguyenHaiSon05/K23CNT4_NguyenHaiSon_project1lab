@@ -11,16 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('nhsctdondh', function (Blueprint $table) {
+        Schema::create('nhsctpnhap', function (Blueprint $table) {
             //$table->id();
-            //$table->timestamps();
-            $table->string('nhsSoDH');
+            //$table->timestamps();php
+            $table->string('nhsSoPN');
             $table->string('nhsMaVTu');
-            $table->integer('nhsSlDat');
-            // Tạo khóa chính trên 2 cột (nhsSoDH, nhsMaVTu)
-            $table->primary(['nhsSoDH','nhsMaVTu']);
-            // Khóa ngoại
-            $table->foreign('nhsSoDH')->references('nhsSoDH')->on('nhsdondh');
+            $table->integer('nhsSlNhap');
+            $table->float('nhsDgNhap');
+            //primary
+            $table->primary(['nhsSoPN','nhsMaVTu']);
+            //Foreign
+            $table->foreign('nhsSoPN')->references('nhsSoPN')->on('nhspnhap');
             $table->foreign('nhsMaVTu')->references('nhsMaVTu')->on('nhsvattu');
         });
     }
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('nhsctdondh');
+        Schema::dropIfExists('nhsctpnhap');
     }
 };

@@ -1,3 +1,6 @@
+ctdondh
+
+
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -11,17 +14,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('nhsctpnhap', function (Blueprint $table) {
+        Schema::create('nhsctdondh', function (Blueprint $table) {
             //$table->id();
             //$table->timestamps();
-            $table->string('nhsSoPN');
+            $table->string('nhsSoDH');
             $table->string('nhsMaVTu');
-            $table->integer('nhsSlNhap');
-            $table->float('nhsDgNhap');
-            //primary
-            $table->primary(['nhsSoPN','nhsMaVTu']);
-            //Foreign
-            $table->foreign('nhsSoPN')->references('nhsSoPN')->on('nhspnhap');
+            $table->integer('nhsSlDat');
+            // Tạo khóa chính trên 2 cột (nhsSoDH, nhsMaVTu)
+            $table->primary(['nhsSoDH','nhsMaVTu']);
+            // Khóa ngoại
+            $table->foreign('nhsSoDH')->references('nhsSoDH')->on('nhsdondh');
             $table->foreign('nhsMaVTu')->references('nhsMaVTu')->on('nhsvattu');
         });
     }
@@ -31,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('nhsctpnhap');
+        Schema::dropIfExists('nhsctdondh');
     }
 };

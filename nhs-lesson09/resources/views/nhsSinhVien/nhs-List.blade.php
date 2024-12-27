@@ -9,6 +9,7 @@
 </head>
 <body>
     <section class="container">
+
         <div class="card">
             <div class="card-headear">
                 <h1>Danh sách sinh viên</h1>
@@ -16,15 +17,17 @@
             <div class="card-body">
                 <table class="table table-bordered">
                     <thead>
-                                <tr>
-                                <th>#</th>
-                                <th>Mã sinh viên</th>
-                                <th>Tên sinh viên</th>
-                                <th>Giới tính</th>
-                                <th>Ngày sinh</th>
-                                <th>Mã khoa</th>
-                                <h1>Học bổng</h1>
-                                <h1>Chức năng</h1>
+                        <tr>
+                            <th>#</th>
+                            <th>Mã sinh viên</th>
+                            <th>Họ sinh viên</th>
+                            <th>Tên sinh viên</th>
+                            <th>Giới tính</th>
+                            <th>Ngày sinh</th>
+                            <th>Nơi sinh</th>
+                            <th>Mã khoa</th>
+                            <th>Học bổng</th>
+                            <th>Chức năng</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -35,20 +38,20 @@
                             @php
                                     $stt++;
                             @endphp
-                         <tr>
-                                <th class="text-center">{{$stt}}</th>
-                                <td>{{$item->nhsMaSV}}</td>
-                                <td>{{$item->nhsHoSV}}</td>
-                                <td> {{$item->nhsTenSV}}</td>
-                                <td>{{$item->nhsPhai}}</td>
-                                <td>{{$item->nhsNgaySinh}}</td>
-                                <td>{{$item->nhsNoiSinh}}</td>
-                                <td>{{$item->nhsMaKH}}</td>
-                                <td class="text-right">{{$item->nhsHocBong}}</td>
-                                <td class="text-center">
-                                    View / edit / delete
-                                </td>
-                        </tr>
+                                    <tr>
+                                        <th class="text-center">{{$stt}}</th>
+                                        <td>{{$item->nhsMaSV}}</td>
+                                        <td>{{$item->nhsHoSV}}</td>
+                                        <td> {{$item->nhsTenSV}}</td>
+                                        <td>{{$item->nhsPhai}}</td>
+                                        <td>{{$item->nhsNgaySinh}}</td>
+                                        <td>{{$item->nhsNoiSinh}}</td>
+                                        <td>{{$item->nhsMaKH}}</td>
+                                        <td class="text-right">{{$item->nhsHocBong}}</td>
+                                        <td class="text-center">
+                                            View / edit / delete
+                                        </td>
+                                    </tr>
                         @endforeach
                     </tbody>
 
@@ -56,7 +59,7 @@
 
             </div>
             <div class="card-footer">
-                <h3>Tổng số sinh viênviên: {{$nhsSinhViens->count()}}</h3>
+                <h3>Tổng số sinh viên: {{$nhsSinhViens->count()}}</h3>
                 <a href="/nhs-sinhvien/create" class="btn btn-primary">Thêm mới</a>
             </div>
         </div>  
